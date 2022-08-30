@@ -8,11 +8,6 @@ const contestantSchema=new mongoose.Schema({
         type:Number,
         default:0
     },
-    photo: {
-        data: Buffer,
-        contentType: String,
-        // required:true
-    },
     image:{
         type:String
     },

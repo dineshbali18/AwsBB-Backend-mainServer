@@ -67,3 +67,15 @@ exports.loadUserVotes=(req,res)=>{
     return res.json({remaining_votes})
   })
 }
+
+exports.makeVotesZero=(req,res)=>{
+  User.updateMany({},{$set:{votelimit:0}}).exec((err,upda)=>{
+    if (err) {
+        return res.status(400).json({
+          error: "decrement of votes not worked"
+        });
+      }
+      res.end();
+    
+})
+}
